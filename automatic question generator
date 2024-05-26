@@ -1,0 +1,18 @@
+import pandas as pd
+import random
+
+
+twof = pd.read_excel('EXAM_FILE2.xlsx')
+num_rows = len(twof)
+num_random_rows = 10
+random_indices = random.sample(range(num_rows), num_random_rows)
+random_rows = twof.iloc[random_indices]
+random_rows.to_excel('Book1.xlsx', index=False)
+print(random_rows)
+fivef = pd.read_excel('EXAM_FILE5.xlsx')
+five_rows = len(fivef)
+five_random_rows = 8
+random_five_indices = random.sample(range(five_rows),five_random_rows)
+random_rows_for_five = fivef.iloc[random_five_indices]
+random_rows_for_five.to_excel('Book2.xlsx', index=False)
+print(random_rows_for_five)
